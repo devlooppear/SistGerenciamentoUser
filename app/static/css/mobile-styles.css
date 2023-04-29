@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 1200px) {
+
+    body{
+        height: 100%;
+        width: 100%;
+    }
+    .container {
+        flex-direction: column;
+        height: 100%;
+        margin-top: 1%;
+        width: 83vw;
+    }
+
+    nav {
+        display: table-cell;
+    }
+
+    .logo {
+        height: max-content;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .logo img {
+        margin: 50px auto;
+        width: 70%;
+    }
+
+    main.form {
+        margin: 20px 0px;
+        width: 100%;
+    }
+
+}

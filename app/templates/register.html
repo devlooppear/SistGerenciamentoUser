@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block title %}Cadastro{% endblock %}
+
+    {% block content %}
+    <h1>Cadastro</h1>
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+        {{ error }}
+        </div>
+    {% endif %}
+    <form method="POST" action="{{ url_for('register') }}">
+        <div class="form-group">
+            <label for="first_name">Nome:</label><br>
+            <input type="text" class="form-control" id="first_name" name="first_name" required placeholder="Insira seu nome">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Sobrenome:</label><br>
+            <input type="text" class="form-control" id="last_name" name="last_name" required placeholder="Insira seu sobrenome">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail:</label><br>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="Insira seu e-mail">
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Telefone:</label><br>
+            <input type="tel" class="form-control" id="phone_number" name="phone_number" minlength="11" maxlength="20" required placeholder="Insira seu telefone">
+        </div>        
+        <div class="form-group">
+            <label for="password">Senha:</label><br>
+            <input type="password" class="form-control" id="password" name="password" required placeholder="Insira sua senha">
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirme a Senha:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirme sua senha">
+        </div>
+        <br><br>
+        <label class="gnr">Gênero:</label><br>
+            <input type="radio" id="male" name="gender" value="H" required>
+            <label for="male">Homem</label>
+            <input type="radio" id="female" name="gender" value="M">
+            <label for="female">Mulher</label>
+            <input type="radio" id="other" name="gender" value="O">
+            <label for="other">Outros</label>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+    {% if message %}
+    <div class="alert alert-success">{{ message }}</div>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>
